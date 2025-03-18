@@ -9,7 +9,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, 
 
 @app.get("/")
 def hello():
-    return { "message": "Hello FastAPI" }
+    return { "message": "Hello FastAPI!" }
 
 if __name__ == "__main__":
     uvicorn.run(
