@@ -9,7 +9,14 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, 
 
 @app.get("/")
 def hello():
-    return { "message": "Hello FastAPI!" }
+    msg = "Några populära SOA-implementationer:" # string-variabel
+    soa_protocols = [ "SOAP", "REST", "GraphQL", "gRPC" ] # list
+    my_dict = { 
+        'message': msg, 
+        'myList': soa_protocols 
+    } # dictionary
+
+    return my_dict
 
 if __name__ == "__main__":
     uvicorn.run(
