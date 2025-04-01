@@ -1,0 +1,16 @@
+@apiUrl = http://0.0.0.0:8190/rooms
+
+###
+GET {{apiUrl}}/rooms
+
+###
+GET {{apiUrl}}/rooms/201
+
+###
+POST {{apiUrl}}/bookings
+Content-Type application/json
+
+{
+    "guest": 1
+    "room": 
+}
