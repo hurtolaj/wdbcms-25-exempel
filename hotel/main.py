@@ -17,6 +17,19 @@ conn = psycopg.connect(DB_URL, autocommit=True, row_factory=dict_row)
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
+@app.get("/if/user_input")
+def if_test(user_input: str):
+    message = None #None e samma som null i andra språk
+
+    if user_input == "hello" or user_input == "hi":
+        message = user_input + "friend"
+    elif user_input == "goodbye" and 1 > 0:
+        message = "byebye"
+    else:
+        message = f"?????????? {user_input}"
+    return {"msg": message}
+
+
 @app.get("/temp")
 def temp():
     with conn.cursor() as cur:

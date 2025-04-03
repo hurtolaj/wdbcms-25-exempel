@@ -4,7 +4,7 @@
 GET {{apiUrl}}/rooms
 
 ###
-GET {{apiUrl}}/rooms/201
+GET {{apiUrl}}/rooms/101
 
 ###
 POST {{apiUrl}}/bookings
@@ -12,5 +12,5 @@ Content-Type application/json
 
 {
     "guest": 1
-    "room": 
+    "room": 101
 }
